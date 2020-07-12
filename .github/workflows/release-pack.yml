@@ -41,6 +41,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: darwin-prebuild
+          path: ./prebuilds/
       - run: npm pack
       - run: mv node-rdkafka-*.tgz node-rdkafka.tgz
       - name: Upload a Release Asset
