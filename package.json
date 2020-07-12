@@ -9,7 +9,7 @@
     "prebuild": "prebuildify --napi",
     "build": "node-gyp build",
     "test": "make test",
-    "install": "prebuildify-load || node-gyp rebuild"
+    "install": "prebuildify-load || prebuildify --napi && node-gyp build"
   },
   "keywords": [
     "kafka",
