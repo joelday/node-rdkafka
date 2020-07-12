@@ -9,7 +9,7 @@
     "prebuild": "prebuildify --napi",
     "build": "node-gyp build",
     "test": "make test",
-    "install": "prebuildify-load || node-gyp build"
+    "install": "prebuildify-load || $(prebuildify --napi && node-gyp configure && node-gyp build)"
   },
   "keywords": [
     "kafka",
@@ -35,12 +35,12 @@
     "jsdoc": "^3.4.0",
     "jshint": "^2.10.1",
     "mocha": "^5.2.0",
-    "node-gyp": "^5.1.0",
-    "prebuildify": "^4.0.0",
     "toolkit-jsdoc": "^1.0.0"
   },
   "dependencies": {
     "nan": "^2.14.0",
+    "prebuildify": "^4.0.0",
+    "node-gyp": "^5.1.0",
     "prebuildify-load": "^2.0.0"
   },
   "engines": {
