@@ -12,11 +12,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - uses: actions/setup-node@v1
         with:
           node-version: 13
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@2.1.1
       - run: npm ci
       - run: npm build
       - name: Upload a Build Artifact
@@ -30,11 +30,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
       - uses: actions/setup-node@v1
         with:
           node-version: 13
-      - name: Checkout submodules
-        uses: textbook/git-checkout-submodule-action@2.1.1
       - run: npm ci
       - run: npm build
       - name: Download a Build Artifact
