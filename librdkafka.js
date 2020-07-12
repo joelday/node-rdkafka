@@ -7,6 +7,6 @@
  * of the MIT license.  See the LICENSE.txt file for details.
  */
 
-var kafka = require('prebuild-load')('node-librdkafka');
+var kafka = require('prebuildify-load')(__dirname);
 
 module.exports = kafka;
